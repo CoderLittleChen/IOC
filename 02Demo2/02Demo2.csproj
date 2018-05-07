@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF2596F1-3E3A-4592-B71A-E4A83F7828A4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_02Demo2</RootNamespace>
+    <AssemblyName>02Demo2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02GreetMessageService\02GreetMessageService.csproj">
+      <Project>{9DEEE4B8-9410-41B9-9FA8-37B80AC4629E}</Project>
+      <Name>02GreetMessageService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ISendable\02ISendable.csproj">
+      <Project>{2353FF31-8B60-4926-B2B4-79EDDCE5A3C7}</Project>
+      <Name>02ISendable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02SendToolFactory\02SendToolFactory.csproj">
+      <Project>{93BCE02C-4294-40C6-A56F-D74052D3A3CB}</Project>
+      <Name>02SendToolFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02Telephone\02Telephone.csproj">
+      <Project>{224AE1D3-A19F-466B-B8C4-20197E49F1F9}</Project>
+      <Name>02Telephone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02WeChat\02WeChat.csproj">
+      <Project>{5B86A57F-825A-4C1F-BFAD-AE17489E2B2C}</Project>
+      <Name>02WeChat</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
