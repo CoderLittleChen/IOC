@@ -14,7 +14,7 @@ namespace _02SendToolFactory
     {
         public static string GetAssembly()
         {
-            //拿到的是exe或者dll文件的所在路径
+            //拿到的是exe或者dll文件的所在路径 a 
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["AssemblyString"]);
         }
 
