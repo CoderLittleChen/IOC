@@ -15,7 +15,8 @@ namespace _02SendToolFactory
         public static string GetAssembly()
         {
             //拿到的是exe或者dll文件的所在路径 
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["AssemblyString"]);
+            //return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["AssemblyString"]);
+            return ConfigurationManager.AppSettings["AssemblyString"];
         }
 
         public static string GetObjectType()
@@ -28,7 +29,7 @@ namespace _02SendToolFactory
             try
             {
                 //加载程序集
-                Assembly assembly = Assembly.LoadFile(GetAssembly());
+                Assembly assembly = Assembly.Load(GetAssembly());
                 //创建类的实例
                 object obj = assembly.CreateInstance(GetObjectType());
                 return obj as ISendable;
