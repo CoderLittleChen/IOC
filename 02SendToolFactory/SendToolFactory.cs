@@ -28,12 +28,12 @@ namespace _02SendToolFactory
         {
             try
             {
-                //加载程序集
+                //先加载程序集  然后通过程序集中的指定的类名称  获取到该类对象
+                //加载程序集 
                 Assembly assembly = Assembly.Load(GetAssembly());
-                //创建类的实例
+                //创建类的实例 
                 object obj = assembly.CreateInstance(GetObjectType());
                 return obj as ISendable;
-
             }
             catch (Exception)
             {
